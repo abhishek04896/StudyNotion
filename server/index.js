@@ -24,10 +24,13 @@ database.connect();
 app.use(express.json());
 app.use(cookieParser());
 app.use(
-    cors({
-        origin: "http://localhost:3000",
-        credentials: true
-    })
+     cors({
+    origin: [
+      "http://localhost:3000",               // for local dev
+      "https://study-notion-edseven.vercel.app/"     // replace with your actual Vercel URL
+    ],
+    credentials: true,
+  })
 )
 
 app.use(
